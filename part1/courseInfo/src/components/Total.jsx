@@ -1,7 +1,12 @@
-import React from 'react'
+import { reduce } from "react";
 
-export const Total = () => {
+export const Total = ({ parts }) => {
+  const total = parts.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.exercises;
+  }, 0);
   return (
-    <div>Total</div>
+    <div>
+      <b>Total: {total} ejercices</b>
+    </div>
   )
 }
